@@ -15,7 +15,7 @@ fi
 # Colors ----------------------------------------------------------
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export dotfilesICOLOR=1 
+export CLICOLOR=1 
 alias ls='ls -G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
 
 # Setup some colors to use later in interactive shell or scripts
@@ -79,12 +79,12 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
   if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
   fi
-  if [ -f /usr/local/etc/bash_completion ]; then
-    . /usr/local/etc/bash_completion
+  if [ -f /usr/local/Cellar/bash_completion ]; then
+    . /usr/local/Cellar/bash_completion
   fi
 
   # git completion
-  source ~/dotfiles/bin/git-completion.bash
+    source ~/dotfiles/dotfiles/bin/git-completion.bash
 
   # Add completion to source and .
   complete -F _command source 
@@ -97,28 +97,28 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
     #git status 2> /dev/null | grep -c : | awk '{if ($1 > 0) print "⚡"}'
   #}
 
-  prompt_func() {
-      previous_return_value=$?;
-      if [ $IS_REMOTE = 'true' ] ; then
-        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_PURPLE}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\]"
-      else
-        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\]"
-      fi
-      #prompt="\033]0;${PWD}\007\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
-      #prompt="\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
-
-      if test $previous_return_value -eq 0
-      then
-          PS1="${prompt}> "
-      else
-          PS1="${prompt}\[${COLOR_RED}\]> \[${COLOR_NC}\]"
-      fi
-  }
-  PROMPT_COMMAND=prompt_func
+#  prompt_func() {
+#      previous_return_value=$?;
+#      if [ $IS_REMOTE = 'true' ] ; then
+#        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_PURPLE}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\#]\n"
+#      else
+#        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\]#\n"
+#      fi
+#      #prompt="\033]0;${PWD}\007\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
+#      #prompt="\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
+#
+#      if test $previous_return_value -eq 0
+#      then
+#          PS1="${prompt}> "
+#      else
+#          PS1="${prompt}\[${COLOR_RED}\]> \[${COLOR_NC}\]"
+#      fi
+#  }
+#  PROMPT_COMMAND=prompt_func
 
   # export PS1="\[${COLOR_GREEN}\]\w\[${COLOR_NC}\] > "  # Primary prompt with only a path
   # export PS1="\[${COLOR_RED}\]\w > \[${COLOR_NC}\]"  # Primary prompt with only a path, for root, need condition to use this for root
-  # export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path 
+   export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path 
   # This runs before the prompt and sets the title of the xterm* window.  If you set the title in the prompt
   # weird wrapping errors occur on some systems, so this method is superior
   #export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/} ${USER}@${HOSTNAME%%.*}"; echo -ne "\007"'  # user@host path
@@ -139,17 +139,18 @@ fi
 # Navigation -------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
-dotfiles() { cd $1; ls -la; } 
+cl() { cd $1; ls -la; } 
 
-source ~/dotfiles/bin/bashmarks.sh
+# source ~/dotfiles/dotfiles/bin/bashmarks.sh
 
 
 
 # Editors ----------------------------------------------------------
-#export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to dotfilesose
+#export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
 #export EDITOR='gedit'  #Linux/gnome
 export EDITOR='vim'  #Command line
 export GIT_EDITOR='vim'
+export SVN_EDITOR=vi
 #alias gvim='/Applications/MacVim.app/Contents/MacOS/vim -g'
 
 if [ "$OS" = "darwin" ] ; then
@@ -229,7 +230,7 @@ fi
 
 
 # Misc
-alias reloadbash='source ~/dotfiles/etc/bash_profile'
+#alias reloadbash='source ~/dotfiles/dotfiles/etc/bash_profile'
 
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias m='more'
@@ -285,10 +286,10 @@ alias spin_kicker="kicker -r rails -b 'spin push'"
 if [ $IS_INTERACTIVE = 'true' ] ; then
   source ~/.bashrc_help
 
-  source ~/dotfiles/bin/mq/mq.sh # MySQL tools
-  source ~/dotfiles/bin/rr/rr.sh # Rails tools
-  source ~/dotfiles/bin/gt/gt.sh # Git tools
-  source ~/dotfiles/bin/sv/sv.sh # SVN tools
+  source ~/dotfiles/dotfiles/bin/mq/mq.sh # MySQL tools
+  source ~/dotfiles/dotfiles/bin/rr/rr.sh # Rails tools
+  source ~/dotfiles/dotfiles/bin/gt/gt.sh # Git tools
+  source ~/dotfiles/dotfiles/bin/sv/sv.sh # SVN tools
 fi
 
 if [ -f ~/.bashrc_local ]; then
