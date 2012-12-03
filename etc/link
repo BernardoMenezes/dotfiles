@@ -15,26 +15,26 @@ else
   }
 
   # bash
-  link ~/cl/etc/bash_profile ~/.bash_profile
-  link ~/cl/etc/bashrc ~/.bashrc
-  link ~/cl/etc/bashrc_help ~/.bashrc_help
-  link ~/cl/etc/bashrc_app_specific ~/.bashrc_app_specific
+  link ~/dotfiles/etc/bash_profile ~/.bash_profile
+  link ~/dotfiles/etc/bashrc ~/.bashrc
+  link ~/dotfiles/etc/bashrc_help ~/.bashrc_help
+  link ~/dotfiles/etc/bashrc_app_specific ~/.bashrc_app_specific
 
   # vim
-  link ~/cl/etc/vim/vimrc ~/.vimrc
-  link ~/cl/etc/vim/gvimrc ~/.gvimrc
-  link ~/cl/etc/vim ~/.vim
+  link ~/dotfiles/etc/vim/vimrc ~/.vimrc
+  link ~/dotfiles/etc/vim/gvimrc ~/.gvimrc
+  link ~/dotfiles/etc/vim ~/.vim
 
   # git
-  link ~/cl/etc/gitconfig ~/.gitconfig
-  link ~/cl/etc/gitignore ~/.gitignore
-  link ~/cl/etc/gitattributes ~/.gitattributes
+  link ~/dotfiles/etc/gitconfig ~/.gitconfig
+  link ~/dotfiles/etc/gitignore ~/.gitignore
+  link ~/dotfiles/etc/gitattributes ~/.gitattributes
 
   # misc
-  link ~/cl/etc/subversion ~/.subversion
-  link ~/cl/etc/autotest ~/.autotest
-  link ~/cl/etc/irbrc ~/.irbrc
-  link ~/cl/etc/ssh_config ~/.ssh/config
+  link ~/dotfiles/etc/subversion ~/.subversion
+  link ~/dotfiles/etc/autotest ~/.autotest
+  link ~/dotfiles/etc/irbrc ~/.irbrc
+  link ~/dotfiles/etc/ssh_config ~/.ssh/config
 
   source ~/.bash_profile
 

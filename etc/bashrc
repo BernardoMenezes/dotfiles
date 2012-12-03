@@ -15,7 +15,7 @@ fi
 # Colors ----------------------------------------------------------
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export CLICOLOR=1 
+export dotfilesICOLOR=1 
 alias ls='ls -G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
 
 # Setup some colors to use later in interactive shell or scripts
@@ -84,7 +84,7 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
   fi
 
   # git completion
-  source ~/cl/bin/git-completion.bash
+  source ~/dotfiles/bin/git-completion.bash
 
   # Add completion to source and .
   complete -F _command source 
@@ -100,9 +100,9 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
   prompt_func() {
       previous_return_value=$?;
       if [ $IS_REMOTE = 'true' ] ; then
-        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_PURPLE}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\]\n"
+        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_PURPLE}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\]"
       else
-        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\]\n"
+        prompt="\n\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_NC}\]"
       fi
       #prompt="\033]0;${PWD}\007\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
       #prompt="\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
@@ -139,14 +139,14 @@ fi
 # Navigation -------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
-cl() { cd $1; ls -la; } 
+dotfiles() { cd $1; ls -la; } 
 
-source ~/cl/bin/bashmarks.sh
+source ~/dotfiles/bin/bashmarks.sh
 
 
 
 # Editors ----------------------------------------------------------
-#export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+#export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to dotfilesose
 #export EDITOR='gedit'  #Linux/gnome
 export EDITOR='vim'  #Command line
 export GIT_EDITOR='vim'
@@ -229,7 +229,7 @@ fi
 
 
 # Misc
-alias reloadbash='source ~/cl/etc/bash_profile'
+alias reloadbash='source ~/dotfiles/etc/bash_profile'
 
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias m='more'
@@ -285,10 +285,10 @@ alias spin_kicker="kicker -r rails -b 'spin push'"
 if [ $IS_INTERACTIVE = 'true' ] ; then
   source ~/.bashrc_help
 
-  source ~/cl/bin/mq/mq.sh # MySQL tools
-  source ~/cl/bin/rr/rr.sh # Rails tools
-  source ~/cl/bin/gt/gt.sh # Git tools
-  source ~/cl/bin/sv/sv.sh # SVN tools
+  source ~/dotfiles/bin/mq/mq.sh # MySQL tools
+  source ~/dotfiles/bin/rr/rr.sh # Rails tools
+  source ~/dotfiles/bin/gt/gt.sh # Git tools
+  source ~/dotfiles/bin/sv/sv.sh # SVN tools
 fi
 
 if [ -f ~/.bashrc_local ]; then
