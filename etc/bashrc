@@ -84,7 +84,7 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
   fi
 
   # git completion
-    source ~/dotfiles/dotfiles/bin/git-completion.bash
+    source ~/dotfiles/bin/git-completion.bash
 
   # Add completion to source and .
   complete -F _command source 
@@ -141,7 +141,7 @@ alias ..='cd ..'
 alias ...='cd .. ; cd ..'
 cl() { cd $1; ls -la; } 
 
-# source ~/dotfiles/dotfiles/bin/bashmarks.sh
+# source ~/dotfiles/bin/bashmarks.sh
 
 
 
@@ -230,7 +230,7 @@ fi
 
 
 # Misc
-#alias reloadbash='source ~/dotfiles/dotfiles/etc/bash_profile'
+#alias reloadbash='source ~/dotfiles/etc/bash_profile'
 
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias m='more'
@@ -286,10 +286,10 @@ alias spin_kicker="kicker -r rails -b 'spin push'"
 if [ $IS_INTERACTIVE = 'true' ] ; then
   source ~/.bashrc_help
 
-  source ~/dotfiles/dotfiles/bin/mq/mq.sh # MySQL tools
-  source ~/dotfiles/dotfiles/bin/rr/rr.sh # Rails tools
-  source ~/dotfiles/dotfiles/bin/gt/gt.sh # Git tools
-  source ~/dotfiles/dotfiles/bin/sv/sv.sh # SVN tools
+  source ~/dotfiles/bin/mq/mq.sh # MySQL tools
+  source ~/dotfiles/bin/rr/rr.sh # Rails tools
+  source ~/dotfiles/bin/gt/gt.sh # Git tools
+  source ~/dotfiles/bin/sv/sv.sh # SVN tools
 fi
 
 if [ -f ~/.bashrc_local ]; then
