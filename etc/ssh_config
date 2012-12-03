@@ -1,0 +1,23 @@
+Host ext-logins.smartleaf.com
+  HostName ext-logins.smartleaf.com
+  IdentityFile ~/.ssh/id_rsa
+  LocalForward 3128 localhost:3128
+  LocalForward 3000 paterson:22
+  LocalForward 5910 ninja.int.smartleaf.com:5900
+  LocalForward 5911 ninja.int.smartleaf.com:22
+  LocalForward 5912 ninja.int.smartleaf.com:548
+
+
+Host colo-logins.smartleaf.com
+  IdentityFile ~/.ssh/id_rsa
+  LocalForward 3128 localhost:3128
+  LocalForward 3000 paterson:22
+  LocalForward 5910 ninja.int.smartleaf.com:5900
+  LocalForward 5911 ninja.int.smartleaf.com:22
+  LocalForward 5912 ninja.int.smartleaf.com:548
+  
+Host localhost
+  IdentityFile ~/.ssh/id_rsa
+
+Host *
+  User bmenezes
