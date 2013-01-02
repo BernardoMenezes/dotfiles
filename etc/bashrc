@@ -122,12 +122,12 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
     #  prompt="\033]0;${PWD}\007\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
     #  prompt="\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
 
-     # if test $previous_return_value -eq 0
-     # then
-     #     PS1="${prompt}> "
-     # else
-     #     PS1="${prompt}\[${COLOR_RED}\]> \[${COLOR_NC}\]"
-     # fi
+     if test $previous_return_value -eq 0
+     then
+         PS1="${prompt}> "
+     else
+         PS1="${prompt}\[${COLOR_RED}\]> \[${COLOR_NC}\]"
+     fi
   }
   PROMPT_COMMAND=prompt_func
 
