@@ -19,5 +19,11 @@ Host colo-logins.smartleaf.com
 Host localhost
   IdentityFile ~/.ssh/id_rsa
 
-Host *
+Host *.smartleaf.com
+  User bmenezes
+
+Host github.com
+  IdentityFile ~/.ssh/github_rsa
+
+Host paterson.int.smartleaf.com
   User bmenezes
