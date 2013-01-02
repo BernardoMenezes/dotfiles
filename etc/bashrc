@@ -22,8 +22,9 @@ export CLICOLOR=1
  
 export OS=`uname`
 if [ "$OS" = "Linux" ] ; then
-  alias ls='ls --color=auto' # For linux, etc
-  # ls colors, see: http://www.linux-sxs.org/housekeeping/lscolors.html
+
+  alias ls='ls --color=auto' # For Linux, etc
+  # ls colors, see: http://www.Linux-sxs.org/housekeeping/lscolors.html
   export LS_COLORS='di=94:fi=0:ln=35:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=31:*.rb=90'  #LS_COLORS is not supported by the default ls command in OS-X  
 else
   alias ls='ls -G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
@@ -248,11 +249,13 @@ fi
 
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 alias m='more'
-alias top='top -o cpu' # os x
+
+#alias top='top -o cpu' # os x
+
 
 alias df='df -h' # Show disk usage
 
-if [ "$OS" = "linux" ] ; then
+if [ "$OS" = "Linux" ] ; then
   alias psaux='ps -AFH'
 else
   alias psaux='ps aux'
@@ -261,7 +264,7 @@ psgrep(){
   psaux | egrep "$1" | egrep -v "grep|highlight" | highlight green "$1"
 }
 
-if [ "$OS" = "linux" ] ; then
+if [ "$OS" = "Linux" ] ; then
   alias systail='tail -f /var/log/syslog'
 else
   alias systail='tail -f /var/log/system.log'
@@ -314,7 +317,7 @@ fi
 
 # Test ------------------------------------------------------------------------ 
 
-#if [ "$OS" = "linux" ] ; then
+#if [ "$OS" = "Linux" ] ; then
 #elif
 #else
 #fi
