@@ -58,6 +58,10 @@ function! Tabstyle_spaces()
 endfunction
 
 call Tabstyle_spaces()
+set showtabline=2
+set tabpagemax=15
+nnoremap <silent> <C-n> :tabnext<CR>
+nnoremap <silent> <C-t> :tabnew<CR>
 
 
 " Indenting *******************************************************************
