@@ -117,7 +117,7 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
       if [ $IS_REMOTE = 'true' ] ; then
         prompt="\[\033]0;${USER} ${PWD}\007\]\[${COLOR_PURPLE}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] " 
      else
-       prompt="\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w \[${COLOR_GRAY}\]${USER}@${HOSTNAME%%.*}$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
+       prompt="\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
       fi
      # prompt="\033]0;${PWD}\007\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
      # prompt="\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "

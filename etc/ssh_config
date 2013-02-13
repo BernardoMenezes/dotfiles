@@ -25,5 +25,9 @@ Host *.smartleaf.com
 Host github.com
   IdentityFile ~/.ssh/github_rsa
 
-Host paterson.int.smartleaf.com
+Host paterson
+  Hostname paterson.int.smartleaf.com
+  User bmenezes
+
+Host wheelhouse
   User bmenezes
