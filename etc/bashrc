@@ -166,6 +166,7 @@ cl() { cd $1; ls -la; }
 export EDITOR='vim'  #Command line
 export GIT_EDITOR='vim'
 export SVN_EDITOR=vi
+export PSQL_EDITOR='vim -c "set syntax=sql"'
 #alias gvim='/Applications/MacVim.app/Contents/MacOS/vim -g'
 
 if [ "$OS" = "darwin" ] ; then
