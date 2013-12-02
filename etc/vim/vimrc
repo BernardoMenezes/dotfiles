@@ -98,17 +98,17 @@ set smartcase " Ignore case when searching lowercase
 nmap <Leader>a :silent exec "while !search( @/, \"W\") \| bnext \| 0 \| endwhile"<CR>
 
 " Colors **********************************************************************
-"set t_Co=256 " 256 colors
+set t_Co=256 " 256 colors
 set background=dark 
-syntax on " syntax highlighting
-colorscheme ir_dark
+syntax enable " syntax highlighting
+colorscheme solarized
 
 
 " Status Line *****************************************************************
 set showcmd
 set ruler " Show ruler
 "set ch=2 " Make command line two lines high
-match LongLineWarning '\%120v.*' " Error format when a line is longer than 120
+"match LongLineWarning '\%120v.*' " Error format when a line is longer than 120
 
 
 " Line Wrapping ***************************************************************
@@ -286,7 +286,8 @@ endif
 " Example .vimrc.local:
 
 "call Tabstyle_tabs()
-"colorscheme ir_dark
+"set background=dark
+"colorscheme solarized
 "match LongLineWarning '\%120v.*'
 
 "autocmd User ~/git/some_folder/* call Tabstyle_spaces() | let g:force_xhtml=1
