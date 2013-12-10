@@ -35,6 +35,7 @@ else
   link ~/dotfiles/etc/autotest ~/.autotest
   link ~/dotfiles/etc/irbrc ~/.irbrc
   link ~/dotfiles/etc/ssh_config ~/.ssh/config
+  link ~/dotfiles/etc/inputrc ~/.inputrc
 
   source ~/.bash_profile
 
