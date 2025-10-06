@@ -9,6 +9,10 @@ export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 # Colors
 autoload -U colors && colors
 
+# Completion
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # --- Aliases ---
 alias ls='ls -G'
 alias l='ls -G'
