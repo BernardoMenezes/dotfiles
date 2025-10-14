@@ -12,6 +12,19 @@ ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ```
 
+Install vim-plug (the Vim plugin manager):
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Install Vim plugins:
+
+```bash
+vim +PlugInstall +qall
+```
+
 ## Files
 
 - `vimrc` - Vim configuration
