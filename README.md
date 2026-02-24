@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal configuration files for vim and zsh.
+Personal configuration files for vim, zsh, and Claude Code.
 
 ## Setup on a new computer
 
@@ -10,6 +10,8 @@ Clone this repository and create symlinks:
 git clone git@github.com:BernardoMenezes/dotfiles.git ~/dotfiles
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
+mkdir -p ~/.claude
+ln -s ~/dotfiles/claude-settings.json ~/.claude/settings.json
 ```
 
 Install vim-plug (the Vim plugin manager):
@@ -29,3 +31,4 @@ vim +PlugInstall +qall
 
 - `vimrc` - Vim configuration
 - `zshrc` - Zsh shell configuration
+- `claude-settings.json` - Claude Code settings (permissions and hooks)

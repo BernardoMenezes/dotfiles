@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "Grep",
+      "Bash(pnpm *)",
+      "Bash(gh *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(ls *)",
+      "Bash(rg *)",
+      "WebFetch(domain:notion.so)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "nice -n 20 afplay /Users/b/.claude/hooks/battlecruiser.caf &"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "nice -n 20 afplay /Users/b/.claude/hooks/mariocoin.caf &"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "nice -n 20 afplay /Users/b/.claude/hooks/wololo.caf &"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "nice -n 20 afplay /Users/b/.claude/hooks/zugzug.caf &"
+          }
+        ]
+      }
+    ]
+  }
+}
