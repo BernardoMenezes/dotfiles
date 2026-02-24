@@ -18,7 +18,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay /Users/b/.claude/hooks/battlecruiser.caf &"
+            "command": "nice -n 20 afplay $HOME/.claude/hooks/battlecruiser.caf &"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/iterm-tab-reset.sh &"
           }
         ]
       }
@@ -28,7 +32,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay /Users/b/.claude/hooks/mariocoin.caf &"
+            "command": "nice -n 20 afplay $HOME/.claude/hooks/mariocoin.caf &"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/iterm-tab-reset.sh &"
           }
         ]
       }
@@ -38,7 +46,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay /Users/b/.claude/hooks/wololo.caf &"
+            "command": "nice -n 20 afplay $HOME/.claude/hooks/wololo.caf &"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/iterm-tab-attention.sh &"
           }
         ]
       }
@@ -48,7 +60,35 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay /Users/b/.claude/hooks/zugzug.caf &"
+            "command": "nice -n 20 afplay $HOME/.claude/hooks/zugzug.caf &"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/iterm-tab-attention.sh &"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "nice -n 20 afplay $HOME/.claude/hooks/PeonYesAttack3.caf &"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "nice -n 20 afplay $HOME/.claude/hooks/orc.caf &"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/iterm-tab-reset.sh &"
           }
         ]
       }
