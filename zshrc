@@ -28,6 +28,18 @@ alias gl='git pull'
 # Use pip3 as default
 alias pip="pip3"
 
+# --- Claude Code sounds toggle ---
+claude-sounds() {
+  local f="$HOME/.claude/hooks/TOGGLE"
+  if [[ "$(cat "$f" 2>/dev/null)" == "0" ]]; then
+    echo "1" > "$f"
+    echo "Claude sounds ON"
+  else
+    echo "0" > "$f"
+    echo "Claude sounds OFF"
+  fi
+}
+
 # --- Git branch helper ---
 parse_git_branch() {
   git branch 2>/dev/null | sed -n '/\* /s///p'
@@ -66,6 +78,42 @@ if command -v op >/dev/null 2>&1; then
 fi
 export PATH="$HOME/.local/bin:$PATH"
 
+# --- I'm tired of typing pnpm install and pnpm start-dependencies
+# # pnpm development setup alias with retry logic
+pnpmfu() {
+  echo "Running pnpm install..."
+  pnpm install
+
+  if [ $? -eq 0 ]; then
+    echo "✓ pnpm install completed successfully"
+    echo ""
+    echo "Starting dependencies..."
+
+    local max_retries=3
+    local retry_count=0
+
+    while [ $retry_count -lt $max_retries ]; do
+      pnpm start-dependencies
+
+      if [ $? -eq 0 ]; then
+        echo "✓ Dependencies started successfully"
+        return 0
+      else
+        retry_count=$((retry_count + 1))
+        if [ $retry_count -lt $max_retries ]; then
+          echo "✗ start-dependencies failed. Retrying ($retry_count/$max_retries)..."
+          sleep 2
+        else
+          echo "✗ start-dependencies failed after $max_retries attempts"
+          return 1
+        fi
+      fi
+    done
+  else
+    echo "✗ pnpm install failed"
+    return 1
+  fi
+}
 
 # Disable annoying telemtry calls from turborepo
 export VERCEL_TELEMETRY_DISABLED=1
