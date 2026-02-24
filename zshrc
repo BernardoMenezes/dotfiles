@@ -49,6 +49,8 @@ HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 
+alias gcm='git fetch && git checkout --detach origin/main'
+
 # --- Plugins (if you install oh-my-zsh) ---
 # Uncomment if using oh-my-zsh
 # plugins=(git z fzf)
@@ -63,3 +65,10 @@ if command -v op >/dev/null 2>&1; then
   fi
 fi
 export PATH="$HOME/.local/bin:$PATH"
+
+
+# Disable annoying telemtry calls from turborepo
+export VERCEL_TELEMETRY_DISABLED=1
+
+# More files can be watched, so you can run `pnpm dev` on multiple workspaces at once
+ulimit -n 65536

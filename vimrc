@@ -20,6 +20,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" JSON support with folding
+Plug 'elzr/vim-json'
+
 call plug#end()
 
 " ===============================
@@ -62,6 +65,13 @@ set hlsearch
 " ===============================
 set clipboard=unnamedplus
 set mouse=a
+
+" ===============================
+" Folding
+" ===============================
+set foldmethod=syntax
+set foldlevelstart=99  " Start with all folds open
+let g:vim_json_syntax_conceal = 0  " Don't hide quotes
 
 " ===============================
 " Lightline config (statusline)
