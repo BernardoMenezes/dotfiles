@@ -61,10 +61,6 @@
           {
             "type": "command",
             "command": "nice -n 20 afplay $HOME/.claude/hooks/zugzug.caf &"
-          },
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/iterm-tab-attention.sh &"
           }
         ]
       }
