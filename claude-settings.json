@@ -62,16 +62,6 @@
           }
         ]
       }
-    ],
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "nice -n 20 afplay $HOME/.claude/hooks/orc.caf &"
-          }
-        ]
-      }
     ]
   }
 }
