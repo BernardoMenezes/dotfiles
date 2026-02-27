@@ -9,6 +9,11 @@
       "Bash(git push *)",
       "Bash(ls *)",
       "Bash(rg *)",
+      "Bash(lsof *)",
+      "Bash(curl http://localhost*)",
+      "Bash(curl https://localhost*)",
+      "Bash(echo *)",
+      "Bash(sleep *)",
       "WebFetch(domain:notion.so)"
     ]
   },
