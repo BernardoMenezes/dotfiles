@@ -24,6 +24,10 @@
           {
             "type": "command",
             "command": "nice -n 20 afplay $HOME/.claude/hooks/battlecruiser.caf &"
+          },
+          {
+            "type": "command",
+            "command": "$HOME/dotfiles/iterm-tab-name.sh"
           }
         ]
       }

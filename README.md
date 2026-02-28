@@ -32,3 +32,4 @@ vim +PlugInstall +qall
 - `vimrc` - Vim configuration
 - `zshrc` - Zsh shell configuration
 - `claude-settings.json` - Claude Code settings (permissions and hooks)
+- `iterm-tab-name.sh` - Sets iTerm2 tab title to project directory name on Claude Code session start
