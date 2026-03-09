@@ -23,7 +23,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay $HOME/.claude/hooks/battlecruiser.caf &"
+            "command": "$HOME/.claude/hooks/play-sound.sh $HOME/.claude/hooks/battlecruiser.caf &"
           },
           {
             "type": "command",
@@ -37,7 +37,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay $HOME/.claude/hooks/mariocoin.caf &"
+            "command": "$HOME/.claude/hooks/play-sound.sh $HOME/.claude/hooks/mariocoin.caf &"
           }
         ]
       }
@@ -47,7 +47,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay $HOME/.claude/hooks/wololo.caf &"
+            "command": "$HOME/.claude/hooks/play-sound.sh $HOME/.claude/hooks/wololo.caf &"
           }
         ]
       }
@@ -57,7 +57,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay $HOME/.claude/hooks/zugzug.caf &"
+            "command": "$HOME/.claude/hooks/play-sound.sh $HOME/.claude/hooks/zugzug.caf &"
           }
         ]
       }
@@ -67,7 +67,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "nice -n 20 afplay $HOME/.claude/hooks/PeonYesAttack3.caf &"
+            "command": "$HOME/.claude/hooks/play-sound.sh $HOME/.claude/hooks/PeonYesAttack3.caf &"
           }
         ]
       }
