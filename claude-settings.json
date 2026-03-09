@@ -14,6 +14,7 @@
       "Bash(curl https://localhost*)",
       "Bash(echo *)",
       "Bash(sleep *)",
+      "Bash(npx eslint*)",
       "WebFetch(domain:notion.so)"
     ]
   },
