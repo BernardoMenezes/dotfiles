@@ -70,12 +70,6 @@ alias gcm='git fetch && git checkout --detach origin/main'
 # --- FZF (if installed via brew) ---
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# --- 1Password CLI (if using op) ---
-if command -v op >/dev/null 2>&1; then
-  if ! op whoami >/dev/null 2>&1; then
-    eval "$(op signin --account my)"
-  fi
-fi
 export PATH="$HOME/.local/bin:$PATH"
 
 # --- I'm tired of typing pnpm install and pnpm start-dependencies
@@ -120,3 +114,5 @@ export VERCEL_TELEMETRY_DISABLED=1
 
 # More files can be watched, so you can run `pnpm dev` on multiple workspaces at once
 ulimit -n 65536
+
+export AWS_REGION=us-east-2
