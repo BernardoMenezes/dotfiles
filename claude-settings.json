@@ -16,7 +16,8 @@
       "Bash(sleep *)",
       "Bash(npx eslint*)",
       "WebFetch(domain:notion.so)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "hooks": {
     "SessionStart": [
@@ -73,5 +74,10 @@
         ]
       }
     ]
-  }
+  },
+  "sandbox": {
+    "enabled": true
+  },
+  "effortLevel": "high",
+  "skipAutoPermissionPrompt": true
 }

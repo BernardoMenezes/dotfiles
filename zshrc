@@ -61,7 +61,7 @@ HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 
-alias gcm='git fetch && git checkout --detach origin/main'
+function gcm { cd "$(git rev-parse --show-toplevel)" && git fetch && git checkout --detach origin/main && pnpm install }
 
 # --- Plugins (if you install oh-my-zsh) ---
 # Uncomment if using oh-my-zsh
